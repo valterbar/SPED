@@ -1,0 +1,21 @@
+import pandas as pd
+path= "TESTA_EXCEL_19SET_SPED\ARQ_PADRAO_MODELO_EXCEL_FILTRO.xlsx" ##COLOCAR NOME ARQUIVO AQUI
+# Importar o arquivo Excel
+df = pd.read_excel(path)
+
+# Filtrar as 3 colunas desejadas
+###NO ARQ EXCEL COLOCAR TITULO COLUNAS 1=COD  3=CFOP  5= VALOR   8=NF  12=VALOR NF
+
+df = df[['COD', 'CFOP', 'VALOR', 'NF', 'VALOR NF']]
+
+# Filtrar os registros com os nomes "João", "Maria" e "Pedro"
+df = df[df['COD'].isin(['C100', 'C190','C590' 'D190'])]
+
+# Selecionar as 4 colunas desejadas
+df = df[['COD', 'CFOP', 'VALOR', 'NF', 'VALOR NF']]
+
+# Imprimir o DataFrame filtrado
+
+    # Save the filtered data
+df.to_excel(f"zzzzzzzzzzzzz_excel_c100_Gerado_filtrado.xlsx")##MUDAR NOME ARQ GERADO 
+
